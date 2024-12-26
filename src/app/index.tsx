@@ -1,16 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Link } from "expo-router";
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
+import FoodListItem from "../components/FoodListitem";
 export default function Page() {
   return (
     <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Link href="/dashboard" style={styles.link}>
-          Tap me
-        </Link>
-        <Text style={styles.subtitle}>This is the first page of your app.</Text>
-      </View>
+      <FoodListItem item={{ label: "Pizza", cal: 75, brand: "Dominos" }} />
+      <FoodListItem item={{ label: "Pizza", cal: 75, brand: "Dominos" }} />
+      {/* You can add more items here with different data */}
     </View>
   );
 }
@@ -20,27 +17,33 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    padding: 24,
-    backgroundColor: "white", // Ensure contrast
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: "white",
   },
-  main: {
-    maxWidth: 960,
-    alignItems: "center",
+  foodItem: {
+    backgroundColor: 'gainsboro',
+    padding: 10,
+    borderRadius: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    maxWidth: 400,
+    marginBottom: 10,
   },
-  title: {
-    fontSize: 64,
-    fontWeight: "bold",
-    textAlign: "center",
+  foodTextContainer: {
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
-  link: {
-    fontSize: 18,
-    color: "blue", // Ensure visibility
-    marginVertical: 16,
+  foodName: {
+    fontWeight: 'bold',
+    fontSize: 16,
   },
-  subtitle: {
-    fontSize: 18,
-    color: "#38434D",
-    textAlign: "center",
+  foodDetails: {
+    color: 'dimgray',
+    fontSize: 14,
   },
 });
+
 console.log("Page component rendered");
+
