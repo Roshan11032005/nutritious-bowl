@@ -15,7 +15,9 @@ const FoodListItem = ({ item }) => {
     },
     foodTextContainer: {
       flexDirection: 'column',
-      justifyContent: 'center',
+      justifyContent: "center"
+      
+
     },
     foodName: {
       fontWeight: 'bold',
@@ -39,4 +41,4 @@ const FoodListItem = ({ item }) => {
   );
 };
 
-export default FoodListItem ;
+export default FoodListItem;
