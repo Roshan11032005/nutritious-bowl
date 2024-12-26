@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, Text, View, FlatList,TextInput } from "react-native";
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const foodItems = [
@@ -13,6 +13,8 @@ import FoodListItem from "../components/FoodListitem";
 export default function Page() {
   return (
     <View style={styles.container}>
+      <TextInput placeholder="Search..." style={styles.input}/>
+
       <FlatList
         data={foodItems} 
         renderItem={({ item }) => <FoodListItem item={item} />}
@@ -27,6 +29,14 @@ const styles = StyleSheet.create({
     flex: 1, 
     padding: 20, 
     justifyContent:"center",
+    gap:10,
+  },
+  input:{
+    backgroundColor:'#f6f6f8',
+    padding:10,
+    borderRadius:5,
+    gap:5,
+
   }
 });
 
